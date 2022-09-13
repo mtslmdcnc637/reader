@@ -1,0 +1,49 @@
+.input{
+    width: 60%;
+    margin: 0 auto;
+    min-height: 500px;
+    display: block;
+}
+.button{
+    display: block;
+    width: 30%;
+    padding: 20px;
+    margin: 30px auto;
+
+    
+}
+.ativo{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color:white;
+    font-weight: 900;
+    font-size: 6em;
+    z-index: 3;
+    position: fixed;
+    left: 0;
+    top: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ativo button{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    vertical-align: middle;
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+    border: none;
+    font-size: 0.3em;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    font-weight: 800px;
+    cursor: pointer;
+}
