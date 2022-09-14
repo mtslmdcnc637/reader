@@ -3,6 +3,7 @@
     margin: 0 auto;
     min-height: 500px;
     display: block;
+    padding: 10px;
 }
 .button{
     display: block;

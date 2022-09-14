@@ -3,13 +3,14 @@ import {useState} from 'react'
 function Input(){
     
     const [palavra,SetPalavra]= useState();
+    const [full, setFull] = useState();
     function setarTexto(e){
         e.preventDefault()
         var n = 0;
         var texto = e.target.texto.value;
         texto = texto.split(" ");
-        
-        
+        document.documentElement.requestFullscreen()
+        setFull("Ligado")
         var intervalo = setInterval(function(){
             if(n < texto.length){
             SetPalavra(texto[n])       
@@ -18,7 +19,7 @@ function Input(){
             clearInterval(intervalo);
 
     }
-        }, 150);
+        }, 230);
         
 
         
@@ -32,8 +33,8 @@ function Input(){
         <input type="text" name="texto" className={style.input} placeholder="Insira aqui o texto"></input>
         <input type="submit" value="Prosseguir" className={style.button}></input>
         </form>
-        {palavra && (
-            <div className={style.ativo}>{palavra} <button onClick={(e) => {SetPalavra()}}>X</button></div>
+        {full && (
+            <div className={style.ativo}>{palavra} <button onClick={(e) => {setFull()}}>X</button></div>
         )
 }
         </>
