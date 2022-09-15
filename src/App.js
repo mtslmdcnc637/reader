@@ -1,9 +1,9 @@
 import './App.css';
-import Input from './components/Input';
+import Start from './components/Start';
 
 function App() {
   return (
-   <Input />
+   <Start />
   );
 }
 
