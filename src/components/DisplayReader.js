@@ -7,21 +7,24 @@ function DisplayReader (props){
     const [termThree, setTermThree] = useState()
     const [termFour, setTermFour] = useState()
     const [termFive, setTermFive] = useState()
-    const [play, setPlay] = useState("play")
+    const [play, setPlay] = useState()
     
     useEffect(()=>{
        var n = 0 
-       
+       setPlay("play")
+        document.documentElement.requestFullscreen() 
         const timer = setInterval(function(){
-        document.documentElement.requestFullscreen()  
-        if(n < getTextVar.length){
+        
+        if(n < getTextVar.length ){
             
             //setTermOne(getTextVar[n-2])
             //setTerm(getTextVar[n-1])
             setTermThree(getTextVar[n])
             //setTermFour(getTextVar[n+1])
             //setTermFive(getTextVar[n+2])
+           
         n++
+            
     }else{
             clearInterval(timer)
         }
@@ -35,9 +38,9 @@ function DisplayReader (props){
                 <div className={style.words}>
                     <h2 className={style.shadow}></h2><h1>{termThree}</h1><h2 className={style.shadow}></h2>
                 </div>
-                <button className={style.exit}>X</button>
-                {play &&(<button className={style.pp} onClick={()=>{setPlay()}}>| |</button>)}
-                {!play &&(<button className={style.pp} onClick={()=>{setPlay("play")}}>0</button>)}
+                
+                {play==="play" &&(<button className={style.pp} onClick={()=>{setPlay("pause")}}>| |</button>)}
+                {play ==="pause" &&(<button className={style.pp} onClick={()=>{setPlay("play")}}>0</button>)}
                 <p className={style.line}></p>
             </div>
         </>

@@ -10,6 +10,7 @@ function Begin (){
         textStable = textStable.split(" ")
         setTextState(textStable)
     }
+    
     return (
     <>
     
@@ -37,6 +38,8 @@ function Begin (){
         </div>
         </div>
          )}
+        {textState &&(<button className={style.exit} onClick={(()=>{setTextState()})}>X</button>)}
+        
         {textState && (
             <DisplayReader textReceived={textState}/>
         )}
