@@ -1,10 +1,15 @@
 import './App.css';
-import Start from './components/Start';
+import Begin from './components/Begin';
+
 
 function App() {
   return (
-   <Start />
-  );
+
+    <Begin/>
+
+  )
+   
+  
 }
 
 export default App;
