@@ -27,11 +27,26 @@
     height: 100%;
     padding: 20px;
     color:white;
+    background-color: black;
+    border-radius: 10px 0 0 10px ;
   }
  
   .form{
     display: flex;
     flex-direction: column;
+    padding: 20px;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    width: 70%;
+  }
+  .form input{
+    background-color: none;
+    background:none;
+    width: 90%;
+    border: none;
+    border-bottom: 1px solid white;
   }
   .exit{
     width: 50px;
