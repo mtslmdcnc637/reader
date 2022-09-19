@@ -1,25 +1,35 @@
 import style from './css/Begin.module.css'
 import {useState, useEffect} from 'react'
 import DisplayReader from './DisplayReader';
+import { AiFillCloseCircle } from "react-icons/ai";
 function Begin (){
     const [ppm, setPpm] = useState()
     var textStable
     const [textState, setTextState] = useState()
+    const [load, setLoad] = useState()
     function getText(e){
         e.preventDefault();
-        var textStable = e.target.text.value
-        textStable = textStable.split(" ")
-        var getPpm = e.target.ppm.value
-        setPpm(getPpm)
-        setTextState(textStable)
-    
-        
+        setLoad("load")
+        document.documentElement.requestFullscreen() 
+       
+        setTimeout(() => {
+            setLoad()
+            var textStable = e.target.text.value
+            textStable = textStable.split(" ")
+            var getPpm = e.target.ppm.value
+            setPpm(getPpm)
+            setTextState(textStable) 
+        }, 3000);   
     }
-    
+
+    function seter(){
+        setTextState()
+        document.exitFullscreen()
+    }
     return (
     <>
     
-        {!textState &&(
+        {!textState && !load &&(
         <div className={style.body}>
             <div className={style.conteiner}>
             
@@ -31,10 +41,13 @@ function Begin (){
                         2 - Escolha a velocidade de leitura - PPM (Palavras por minuto)
                     </li>
                     <li>
-                        3 - (em breve) - Se quiser pausar depois que a leirura começar é so tocar no botão de pause
+                        3 - Para uma melhor visualização ligue a rotação automática para uso em smartphones
                     </li>
                     <li>
-                        4 - (em breve)- Continue lendo textos anteriores de onde parou
+                        4 - (em breve) - Se quiser pausar depois que a leirura começar é so tocar no botão de pause
+                    </li>
+                    <li>
+                        5 - (em breve)- Continue lendo textos anteriores de onde parou
                     </li>
                 </ul>
             
@@ -59,11 +72,21 @@ function Begin (){
 
             
 
-        {textState &&(<button className={style.exit} onClick={(()=>{setTextState() (document.exitFullscreen())} )}>X</button>)}
+        {textState && !load &&(<button className={style.exit} onClick={seter}><AiFillCloseCircle/></button>)}
         
-        {textState && (
+        {textState && !load && (
             <DisplayReader textReceived={textState} ppm={ppm}/>
         )}
+        {load &&(
+        <div className={style.load_cont}>
+            <div className={style.load}>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>)
+        }
         </>
     )
 }

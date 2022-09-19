@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import style from './css/DisplayReader.module.css'
+import { AiFillPauseCircle } from "react-icons/ai";
+import { AiFillPlayCircle } from "react-icons/ai";
 function DisplayReader (props){
     var getTextVar = props.textReceived
     const [termOne, setTermOne] = useState()
@@ -20,8 +22,9 @@ function DisplayReader (props){
     
        var n = 0 
        setPlay("play")
-        document.documentElement.requestFullscreen() 
+        
         const timer = setInterval(function(){
+
         if(n < getTextVar.length ){
             setPlace(n+1)
             setTermThree(getTextVar[n])
@@ -47,8 +50,8 @@ function DisplayReader (props){
                     <h2 className={style.shadow}></h2><h1>{termThree}</h1><h2 className={style.shadow}></h2>
                 </div>
                 <span className={style.place}>{place}/{amount} | Tempo estimado de leitura: {total_time}</span>
-                {play==="play" &&(<button className={style.pp} onClick={()=>{setPlay("pause")}}>| |</button>)}
-                {play ==="pause" &&(<button className={style.pp} onClick={()=>{setPlay("play")}}>0</button>)}
+                {play==="play" &&(<button className={style.pp} onClick={()=>{clearInterval()}}><AiFillPauseCircle/></button>)}
+                {play ==="pause" &&(<button className={style.pp} onClick={()=>{setPlay("play")}}><AiFillPlayCircle/></button>)}
 
                 <p className={style.line}>
                      {termOne && (termOne)+" "} 

@@ -1,4 +1,9 @@
-
+svg{
+  fill:white;
+  color: white;
+  width: 40px;
+  height: 40px;
+}
 .conteiner{
     background: rgba(50,50,50,0.9);
     position:absolute;
@@ -49,11 +54,9 @@
     border-bottom: 1px solid white;
   }
   .exit{
-    width: 50px;
-    height: 50px;
+    background-color: none;
+    background: none;
     position: absolute;
-    font-weight: 800;
-    border-radius: 50%;
     border: none;
     display: flex;
     align-items: center;
@@ -66,8 +69,8 @@
 }
   .exit{
     position: absolute;
-    top:40px;
-    right: 40px;
+    top:10px;
+    right: 10px;
 }
 .button{
     width: 50%;
@@ -77,9 +80,74 @@
     padding: 20px;
     border:none;
 }
+.load_cont{
+  content: '';
+  position: fixed;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
 
+}
+.load{
+  position: absolute;
+  
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+  animation: animate 0.5s linear infinite;
+  z-index: 10;
+}
+.load span{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+}
+@keyframes animate{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+.load span:nth-child(1){
+  filter: blur(5px);
+}
+.load span:nth-child(2){
+  filter: blur(10px);
+}
+.load span:nth-child(3){
+  filter: blur(25px);
+}
+.load span:nth-child(4){
+  filter: blur(50px);
+}
+.load::after{
+  content: '';
+  position: absolute;
+  top:10px;
+  left: 10px;
+  bottom: 10px;
+  right: 10px;
+  background-color: black;
+  border-radius: 50%;
+}
 
-
+.timer{
+  position: fixed;
+  top:50vh;
+  left: 50vw;
+  transform: translate(-50%,-50%);
+  color:white;
+  z-index: 11;
+}
 
 
   @media (max-width:1000px){
