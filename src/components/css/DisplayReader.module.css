@@ -55,6 +55,14 @@ h1{
     top:120px;
     right: 40px; 
 }
+.place{
+    font-size: 1em;
+    font-weight: 200;
+    color:white;
+    position: fixed;
+    top:40px;
+    left: 40px;
+}
 
 @media(max-width:700px){
     

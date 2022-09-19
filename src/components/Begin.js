@@ -56,6 +56,9 @@ function Begin (){
         </div>
         </div>
          )}
+
+            
+
         {textState &&(<button className={style.exit} onClick={(()=>{setTextState() (document.exitFullscreen())} )}>X</button>)}
         
         {textState && (

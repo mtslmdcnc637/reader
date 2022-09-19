@@ -8,18 +8,22 @@ function DisplayReader (props){
     const [termFour, setTermFour] = useState()
     const [termFive, setTermFive] = useState()
     const [play, setPlay] = useState()
-    
+    const [place, setPlace] = useState()
+    var amount = getTextVar.length
+    var total_time = amount/props.ppm
+        total_time = Math.ceil(total_time/60)+" min"
     
     useEffect(()=>{
     var vel = props.ppm
     var vel = 1000/(vel/60)
-    console.log(vel)
+    
     
        var n = 0 
        setPlay("play")
         document.documentElement.requestFullscreen() 
         const timer = setInterval(function(){
         if(n < getTextVar.length ){
+            setPlace(n+1)
             setTermThree(getTextVar[n])
 
             if( n-2 > 0){setTermOne(getTextVar[n-2])}else{setTermOne()}
@@ -42,9 +46,10 @@ function DisplayReader (props){
                 <div className={style.words}>
                     <h2 className={style.shadow}></h2><h1>{termThree}</h1><h2 className={style.shadow}></h2>
                 </div>
-                
+                <span className={style.place}>{place}/{amount} | Tempo estimado de leitura: {total_time}</span>
                 {play==="play" &&(<button className={style.pp} onClick={()=>{setPlay("pause")}}>| |</button>)}
                 {play ==="pause" &&(<button className={style.pp} onClick={()=>{setPlay("play")}}>0</button>)}
+
                 <p className={style.line}>
                      {termOne && (termOne)+" "} 
                      {termTwo && (termTwo)+" "} 
