@@ -109,6 +109,7 @@ svg{
   border-radius: 50%;
   background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
 }
+
 @keyframes animate{
   0%{
     transform: rotate(0deg);
@@ -147,6 +148,22 @@ svg{
   transform: translate(-50%,-50%);
   color:white;
   z-index: 11;
+}
+.pp{
+  background-color: none;
+  background: none;
+  position: fixed;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  position: absolute;
+  top:70px;
+  right: 10px; 
 }
 
 
