@@ -23,8 +23,8 @@ function DisplayPaused (props){
             setPlace(n+1)
             if( n-2 > 0){setTermOne(getTextVar[n-2])}else{setTermOne()}
             if( n-1 > 0){setTermTwo(getTextVar[n-1])}else{setTermTwo()}
-            if( n+1 < getTextVar.length ){setTermFour(getTextVar[n-1])}else{setTermFour()}
-            if( n+2 < getTextVar.length){setTermFive(getTextVar[n-1])}else{setTermFive()}
+            if( n+1 < getTextVar.length ){setTermFour(getTextVar[n+1])}else{setTermFour()}
+            if( n+2 < getTextVar.length){setTermFive(getTextVar[n+2])}else{setTermFive()}
             
         })
     
