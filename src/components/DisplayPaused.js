@@ -26,7 +26,7 @@ function DisplayPaused (props){
             if( n+1 < getTextVar.length ){setTermFour(getTextVar[n+1])}else{setTermFour()}
             if( n+2 < getTextVar.length){setTermFive(getTextVar[n+2])}else{setTermFive()}
             
-        })
+        },[])
     
    
     return (

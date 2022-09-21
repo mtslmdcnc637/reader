@@ -35,10 +35,12 @@ function Begin (){
         console.log(play)
         sessionStorage.clear()
     }
+    var previous_text = localStorage.getItem("text")
+
     return (
     <>
     
-        {!textState && !load &&(
+        {!textState && !load && !previous_text &&(
         <div className={style.body}>
             <div className={style.conteiner}>
             
@@ -79,10 +81,10 @@ function Begin (){
         </form></div>
         </div>
          )}
-
+        
             
 
-        {textState && !load &&(<button className={style.exit} onClick={seter}><AiFillCloseCircle/></button>)}
+        {textState && !load && (<button className={style.exit} onClick={()=>{seter()}}><AiFillCloseCircle/></button>)}
         
         {textState && !load && play ==="play" &&(
             <DisplayReader textReceived={textState} ppm={ppm} play={play}/>

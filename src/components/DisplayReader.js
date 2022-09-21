@@ -22,8 +22,10 @@ function DisplayReader (props){
             setPlace(n+1)
             setTermThree(getTextVar[n])
             var paused = sessionStorage.getItem("paused")
+            localStorage.setItem("nWord", n)
             if(!paused){
             sessionStorage.setItem("current_word", n)
+            
             }
         n++
             
