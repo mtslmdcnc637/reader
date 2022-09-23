@@ -6,6 +6,8 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { AiFillPauseCircle } from "react-icons/ai";
 import { AiFillPlayCircle } from "react-icons/ai";
 import DisplayPaused from './DisplayPaused';
+import icon from '../favicon.png'
+
 function Begin (){
     useEffect(()=>{
         sessionStorage.removeItem("current_word")
@@ -45,7 +47,7 @@ function Begin (){
         {!textState && !load && !previous_text &&(
              <div className={style.body}>
              <div className={style.bg}>
-                 <h5>Leitura Ninja</h5>
+                 <h5><img src={icon}></img>   Leitura Ninja</h5>
                  <p>Bem-vindo! Leitura ninja é a mais nova ferramenta brasileira com objetivo acelerar a leitura de textos grandes. Você só precisa colar seu texto na área indicada, escolher a velocidade de leitura e apertar o play</p>
                  <div className={style.buttons}>
                      <button>Ajude no desenvolvimento da ferramenta</button>
@@ -73,10 +75,9 @@ function Begin (){
                      </select></div>
                      <select name="words" id="words">
                          <option value="1" key="1" selected>1 palavra de cada vez</option>
-                         <option value="2" key="2">2 palavras de cada vez</option>
                          
                      </select>
-                     <input type="submit" value="Começe a ler" className={style.button}></input>
+                     <input type="submit" value="Começar a ler" className={style.button}></input>
  
                  </form>  
              </div>

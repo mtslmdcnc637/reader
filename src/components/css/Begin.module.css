@@ -94,8 +94,7 @@
 .bg{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 50px;
+  justify-content: space-around;
   background-color: blue;
   width: 60vw;
   height: 60vh;
@@ -115,6 +114,7 @@ h1, h2, h3, h4 ,h5{
 }
 p{
   width: 50%;
+  font-size: 17px;
 }
 .box_conteiner{
   width: 60vw;
@@ -155,7 +155,8 @@ p{
   padding: 2%;
 }
 .form_cont textarea{
-  height: 29vh;
+  height: 28vw;
+  max-height: 180px;
   box-sizing: border-box;
 }
 .form_cont div{
@@ -274,3 +275,10 @@ select{
     
   }
 }
+  h5{
+    font-size: 35px;
+  }
+  h5 img{
+    width: 35px;
+    border-radius: 50%;
+  }
