@@ -1,77 +1,5 @@
-svg{
-  fill:white;
-  color: white;
-  width: 40px;
-  height: 40px;
-}
-.conteiner{
-    background: rgba(50,50,50,0.9);
-    position:absolute;
-    min-width: 300px;
-    width: 60%;
-    height: 80%;
-    min-height: 400px;
-    margin: 0 auto;
-    display: flex;
-    border-radius: 10px;
-}
-.body{
-    
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  ul{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    list-style: none;
-    width: 30%;
-    height: 100%;
-    padding: 20px;
-    color:white;
-    background-color: black;
-    border-radius: 10px 0 0 10px ;
-  }
- 
-  .form{
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    justify-content: space-around;
-    align-content: center;
-    align-items: center;
-    text-align: center;
-    width: 70%;
-  }
-  .form .input{
-    background-color: none;
-    background:none;
-    width: 90%;
-    border: none;
-    border-bottom: 1px solid white;
-  }
-  .exit{
-    background-color: none;
-    background: none;
-    position: absolute;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
 
-}
-  .exit{
-    position: absolute;
-    top:10px;
-    right: 10px;
-}
+ 
 .button{
     width: 50%;
     background-color: aqua;
@@ -149,22 +77,6 @@ svg{
   color:white;
   z-index: 11;
 }
-.pp{
-  background-color: none;
-  background: none;
-  position: fixed;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  margin:0;
-  padding: 0;
-  box-sizing: border-box;
-  position: absolute;
-  top:70px;
-  right: 10px; 
-}
 
 
   @media (max-width:1000px){
@@ -190,4 +102,145 @@ svg{
         margin: 0;
     }
 
+}
+.body{
+  background-image: linear-gradient(120deg, #fbc2eb 0%, #a6c1ee 100%);
+  position: fixed;
+  top:0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+  
+}
+.bg{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+  background-color: blue;
+  width: 60vw;
+  height: 60vh;
+  z-index: 1;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.2);
+  padding: 5%;
+  color:white;
+}
+.bg button{
+  background-color: springgreen;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+}
+h1, h2, h3, h4 ,h5{
+  font-weight: 800;
+}
+p{
+  width: 50%;
+}
+.box_conteiner{
+  width: 60vw;
+  height: 20vh;
+  background:#f1f1f1;
+  z-index: 2;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.2);
+  display: flex;
+  padding: 5%;
+  flex-direction: row;
+  justify-content: initial;
+  align-items: center;
+  gap: 25px;
+}
+.box_conteiner button{
+  border: none;
+  width: 50px;
+  height: 50px;
+  box-shadow: 5px 5px 8px rgba(0,0,0,0.2);
+  border-radius: 50%;
+  background-color: #f6f6f6;
+  
+}
+.box_conteiner button svg{
+  font-size: 25px;
+  fill:#888;
+  width: 25px;
+  
+}
+.form_cont{
+  width: 25vw;
+  height: 70vh;
+  background-color: white;
+  position: absolute;
+  z-index: 3;
+  transform: translate(60%);
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.2);
+  padding: 2%;
+}
+.form_cont textarea{
+  height: 29vh;
+  box-sizing: border-box;
+}
+.form_cont div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+select{
+  padding: 10px;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+.form textarea{
+  padding: 10px;
+}
+.button{
+  padding: 10px;
+  background-color: blue;
+  color:white;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+}
+.pp{
+  fill:black;
+  background-color: white;
+  border-radius: 50%;
+  font-size: 40px;
+  position: fixed;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  position: absolute;
+  top:70px;
+  right: 10px; 
+}
+.exit{
+  fill:black;
+  background-color: white;
+  border-radius: 50%;
+  font-size: 40px;
+  position: absolute;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  top:10px;
+  right: 10px;
 }
