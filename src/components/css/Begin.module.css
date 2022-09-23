@@ -222,16 +222,19 @@ select{
   .bg{
     width:75vw;
     min-width: 850px;
+    max-height: 350px;
     
   }
   .box_conteiner{
     width:75vw;
     min-width: 850px;
+    max-height: 100px;
     
   }
   .form_cont{
     width: 30vw;
     min-width: 320px;
+    max-height: 400px;
   }
 }
 @media screen and (max-width:860px){
@@ -256,7 +259,7 @@ select{
     align-items: center;
     align-content: center;
     text-align: center;
-    min-height: 100px;
+    height: 100px;
     justify-content: space-around;
     gap: 0;
     padding: 0 10%;
