@@ -1,45 +1,62 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
+import { AiFillPauseCircle } from "react-icons/ai";
+
 import style from './css/DisplayReader.module.css'
 function DisplayReader (props){
     
-    var getTextVar = props.textReceived
     const [termThree, setTermThree] = useState()
-    const [place, setPlace] = useState()
-    var amount = getTextVar.length
-    var total_time = amount/props.ppm
-        total_time = Math.ceil(total_time)+" min"
-        useEffect(()=>{
-            var vel = props.ppm
-            var vel = 1000/(vel/60)
-            var n = 0
-            var continue_play = sessionStorage.getItem("current_word")
-            if(continue_play){n = parseInt(continue_play)}else{var n = 0}
-            //sessionStorage.removeItem("current_word")
-            
-            const timer = setInterval(function(){
-            var paused = sessionStorage.getItem("paused")
-            if(!paused){
-                if(n < getTextVar.length){
-            setPlace(n+1)
-            setTermThree(getTextVar[n])
-            localStorage.setItem("nWord", n)
-            sessionStorage.setItem("current_word", n)
-        n++
-            
-    }else{
-            clearInterval(timer)
-        }}
-    },vel)
-    },[])
+    const [playLocal, setPlayLocal] = useState(props.play)
+    const [num, setNum] = useState(parseInt(props.nWord))
     
+    var textLocal = props.text
+    var splitedText = textLocal.split(" ")
+    
+    
+        var ppmLocal = parseInt(props.ppm)
+        props.setPlay("play")
+        var amount = splitedText.length
+        props.setSize(amount)
+        var total_time = amount/parseInt(ppmLocal) // tempo total = a quantidade de palavras dividido pela velocidade
+        total_time = Math.ceil(total_time)+" min"
+        localStorage.setItem("text", textLocal)
+        localStorage.setItem("ppm", ppmLocal)
+            var vel = 1000/(ppmLocal/60)
+            vel = Math.ceil(vel) 
+            
+        const timer = useMemo(()=>{ setInterval(function(){ 
+                            if(num < splitedText.length){ 
+                                setNum(prev => prev + 1)
+                                
+                            }else{
+                                clearInterval(timer)
+                            }
+                        
+                    },vel)
+                },[])
+    useEffect(()=>{
+        if(props.play == "play"){
+        setTermThree(splitedText[num])
+        localStorage.setItem("nWord", num)
+        props.setN(num)
+        props.setWord(splitedText[num])
+        props.setWord1(splitedText[num+1])
+        props.setWord2(splitedText[num+2])
+        props.setWord_1(splitedText[num-1])
+        props.setWord_2(splitedText[num-2])
+        
+    }
+    },[num])
    
     return (
         <>
-            <div className={style.conteiner}>
+            <div className={style.conteiner} onClick={()=>{props.setPlay("pause")}}>
                 <div className={style.words}>
                     <h2 className={style.shadow}></h2><h1>{termThree}</h1><h2 className={style.shadow}></h2>
                 </div>
             </div>
+            
+            
+        
         </>
     )
 }

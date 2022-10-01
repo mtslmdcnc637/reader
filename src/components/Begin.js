@@ -3,32 +3,32 @@ import { BsTelegram, BsInstagram, BsDiscord, BsWhatsapp } from "react-icons/bs";
 import {useState, useEffect} from 'react'
 import DisplayReader from './DisplayReader';
 import { AiFillCloseCircle } from "react-icons/ai";
-import { AiFillPauseCircle } from "react-icons/ai";
-import { AiFillPlayCircle } from "react-icons/ai";
 import DisplayPaused from './DisplayPaused';
 import icon from '../favicon.png'
 
 function Begin (){
-    useEffect(()=>{
-        sessionStorage.removeItem("current_word")
-    },[])
-    const [ppm, setPpm] = useState()
-    var textStable
-    const [textState, setTextState] = useState()
-    const [load, setLoad] = useState()
     const [play, setPlay] = useState()
+    const [word, setWord] = useState()
+    const [word_1, setWord_1] = useState()
+    const [word_2, setWord_2] = useState()
+    const [word1, setWord1] = useState()
+    const [word2, setWord2] = useState()
+    const [ppm, setPpm] = useState()
+    const [load, setLoad] = useState()
+    const [textState, setTextState] = useState()
+    const [n, setN] = useState(0)
+    const [size, setSize] = useState()
     function getText(e){
         e.preventDefault();
         setLoad("load")
         document.documentElement.requestFullscreen() 
-        
+        var textStable = e.target.text.value
+        var getPpm = e.target.ppm.value
+        setPpm(getPpm)
+        setTextState(textStable) 
+
         setTimeout(() => {
             setLoad()
-            var textStable = e.target.text.value
-            textStable = textStable.split(" ")
-            var getPpm = e.target.ppm.value
-            setPpm(getPpm)
-            setTextState(textStable) 
             setPlay("play")
         }, 3000);   
     }
@@ -38,13 +38,22 @@ function Begin (){
         document.exitFullscreen()
         setPlay()
         sessionStorage.clear()
+        setN(0)
+        setPlay()
+        setWord()
+        setWord1()
+        setWord2()
+        setWord_1()
+        setWord_2()
+        setSize()
+
     }
-    var previous_text = localStorage.getItem("text")
+    
 
     return (
     <>
     
-        {!textState && !load && !previous_text &&(
+        {!textState && !load  &&(
              <div className={style.body}>
              <div className={style.bg}>
                  <h5><img src={icon}></img>   Leitura Ninja</h5>
@@ -89,17 +98,14 @@ function Begin (){
 
         {textState && !load && (<button className={style.exit} onClick={()=>{close()}}><AiFillCloseCircle/></button>)}
         
-        {textState && !load && play ==="play" &&(
-            <DisplayReader textReceived={textState} ppm={ppm} play={play}/>
-            
+        {textState && !load  && play === "play" &&(
+            <DisplayReader setPlay={setPlay} text={textState} ppm={ppm} play={play} nWord={n} setSize ={setSize} setN={setN} setWord={setWord} setWord_1={setWord_1} setWord_2={setWord_2} setWord1={setWord1} setWord2={setWord2} size={size}/>
         )}
-        {textState && !load && play !="play" &&(
-            <DisplayPaused textReceived={textState} ppm={ppm}/>
-            
+        {textState && !load  && play === "pause" &&(
+            <DisplayPaused setPlay={setPlay} text={textState} n={n} ppm={ppm} play={play} word={word} word_1={word_1} word_2={word_2} word1={word1} word2={word2} size={size} setN={setN}/>
         )}
-        {!play && textState &&(<button className={style.pp} onClick={()=>{setPlay("play"); sessionStorage.removeItem("paused")}}><AiFillPlayCircle/></button>)}
-        {play && textState &&(<button className={style.pp} onClick={()=>{setPlay(); sessionStorage.setItem("paused", "true")}}><AiFillPauseCircle/></button>)}
-        {load &&(
+        
+       {load &&(
         <div className={style.load_cont}>
             <div className={style.load}>
                 <span></span>

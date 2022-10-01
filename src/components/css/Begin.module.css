@@ -156,7 +156,7 @@ p{
 }
 .form_cont textarea{
   height: 28vw;
-  max-height: 180px;
+  max-height: 130px;
   box-sizing: border-box;
 }
 .form_cont div{
@@ -170,8 +170,10 @@ select{
 .form{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 20px;
+  align-content: space-around;
+  gap: 10px;
+  
+
 }
 .form textarea{
   padding: 10px;
@@ -184,24 +186,7 @@ select{
   border-radius: 5px;
   width: 100%;
 }
-.pp{
-  fill:black;
-  background-color: white;
-  border-radius: 50%;
-  font-size: 40px;
-  position: fixed;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  margin:0;
-  padding: 0;
-  box-sizing: border-box;
-  position: absolute;
-  top:70px;
-  right: 10px; 
-}
+
 .exit{
   fill:black;
   background-color: white;
@@ -281,4 +266,13 @@ select{
   h5 img{
     width: 35px;
     border-radius: 50%;
+  }
+  .form_cont button:nth-child(2){
+    padding: 10px;
+  background-color:#ff00e0;
+  color:white;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  margin: 10px 0;
   }

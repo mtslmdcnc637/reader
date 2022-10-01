@@ -23,7 +23,7 @@
     margin: 0 35px;
 }
 h1{
-    font-size:8em; 
+    font-size:50px; 
     color:white
 }
 .line{
@@ -65,8 +65,41 @@ h1{
 @media(max-width:700px){
     
     h1{
-        font-size: 3em;
+        font-size: 40px;
     }
     
-}  
-
+}  .pp{
+    fill:black;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 40px;
+    position: fixed;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    position: absolute;
+    top:70px;
+    right: 10px; 
+  }
+  .exit{
+    fill:black;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 40px;
+    position: absolute;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    top:10px;
+    right: 10px;
+  }
