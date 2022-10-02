@@ -129,7 +129,12 @@ p{
   align-items: center;
   gap: 25px;
 }
-.box_conteiner button{
+.box_conteiner a{
+  display: flex;
+  vertical-align: middle;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   border: none;
   width: 50px;
   height: 50px;
@@ -138,10 +143,39 @@ p{
   background-color: #f6f6f6;
   
 }
-.box_conteiner button svg{
+.box_conteiner a svg{
   font-size: 25px;
   fill:#888;
   width: 25px;
+  
+}
+.box_conteiner a:hover svg:nth-child(1){
+  font-size: 50px;
+  fill:#0088cc;
+  width: 50px;
+  transition: 0.3s;
+  
+}
+
+.box_conteiner a:nth-child(2):hover svg:nth-child(1){
+  font-size: 40px;
+  fill:#dd2a7b;
+  width: 40px;
+  transition: 0.3s;
+  
+}
+.box_conteiner a:nth-child(3):hover svg:nth-child(1){
+  font-size: 40px;
+  fill:#738adb;
+  width: 40px;
+  transition: 0.3s;
+  
+}
+.box_conteiner a:nth-child(4):hover svg:nth-child(1){
+  font-size: 40px;
+  fill:#25d366;
+  width: 40px;
+  transition: 0.3s;
   
 }
 .form_cont{
@@ -174,6 +208,14 @@ select{
   gap: 10px;
   
 
+}
+.buttons a{
+  background-color: #25d366;
+  color:white;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 14px 10px;
+  border-radius: 5px;
 }
 .form textarea{
   padding: 10px;

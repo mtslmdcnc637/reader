@@ -6,7 +6,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import DisplayPaused from './DisplayPaused';
 import icon from '../favicon.png'
 
-function Begin (){
+function Begin (props){
     const [play, setPlay] = useState()
     const [word, setWord] = useState()
     const [word_1, setWord_1] = useState()
@@ -16,7 +16,9 @@ function Begin (){
     const [ppm, setPpm] = useState()
     const [load, setLoad] = useState()
     const [textState, setTextState] = useState()
-    const [n, setN] = useState(0)
+    const [n, setN] = useState()
+    useEffect(()=>{if(props.nWord){setN(parseInt(props.nWord))}else{setN(0)}},[])
+    
     const [size, setSize] = useState()
     function getText(e){
         e.preventDefault();
@@ -59,18 +61,18 @@ function Begin (){
                  <h5><img src={icon}></img>   Leitura Ninja</h5>
                  <p>Bem-vindo! Leitura ninja é a mais nova ferramenta brasileira com objetivo acelerar a leitura de textos grandes. Você só precisa colar seu texto na área indicada, escolher a velocidade de leitura e apertar o play</p>
                  <div className={style.buttons}>
-                     <button>Ajude no desenvolvimento da ferramenta</button>
+                     <a href="https://pag.ae/7YHBnioxL" target="_blank">Ajude no desenvolvimento da ferramenta</a>
                  </div>
              </div>
              <div className={style.box_conteiner}>
-                 <button><BsTelegram/></button>
-                 <button><BsInstagram/></button>
-                 <button><BsDiscord/></button>
-                 <button><BsWhatsapp/></button>
+                 <a href="http://te.me/leituraninja" target="_blank"><BsTelegram/></a>
+                 <a href="https://www.instagram.com/live_lima_mateus/" target="_blank"><BsInstagram/></a>
+                 <a href="http://discord.gg/n47DyrHS" target="_blank"><BsDiscord/></a>
+                 <a href="http://wa.me/+551299856048" target="_blank"><BsWhatsapp/></a>
              </div>
              <div className={style.form_cont}>
                      <form className={style.form} onSubmit={getText} >
-                     <textarea name="text" placeholder="Insira aqui seu texto" className={style.input}></textarea>
+                     <textarea name="text" placeholder="Insira aqui seu texto" value={props.text} className={style.input}></textarea>
                      <div><span>Velocidade</span>
                      <select name="ppm" id="ppm">
                          <option value="200" key="200">200 ppm</option>
@@ -86,7 +88,7 @@ function Begin (){
                          <option value="1" key="1" selected>1 palavra de cada vez</option>
                          
                      </select>
-                     <input type="submit" value="Começar a ler" className={style.button}></input>
+                     <input type="submit" value={"Começar a ler"} className={style.button}></input>
  
                  </form>  
              </div>
