@@ -24,7 +24,7 @@ function DisplayReader (props){
             vel = Math.ceil(vel) 
             
         const timer = useMemo(()=>{ setInterval(function(){ 
-                            if(num < splitedText.length){ 
+                            if(num < (splitedText.length+1)){ 
                                 setNum(prev => prev + 1)
                                 
                             }else{
@@ -51,7 +51,7 @@ function DisplayReader (props){
         <>
             <div className={style.conteiner} onClick={()=>{props.setPlay("pause")}}>
                 <div className={style.words}>
-                    <h2 className={style.shadow}></h2><h1>{termThree}</h1><h2 className={style.shadow}></h2>
+                    <h1>{termThree}</h1>
                 </div>
             </div>
             

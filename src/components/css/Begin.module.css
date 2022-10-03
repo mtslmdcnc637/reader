@@ -20,9 +20,15 @@
   align-content: center;
 
 }
+.dica{
+  position: absolute;
+  top: 80%;
+  font: 20px;
+  font-weight: 200;
+  color:white;
+}
 .load{
   position: absolute;
-  
   width: 200px;
   height: 200px;
   border-radius: 50%;
