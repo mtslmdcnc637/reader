@@ -29,7 +29,7 @@ function Begin (props){
         var getPpm = e.target.ppm.value
         setPpm(getPpm)
         setTextState(textStable) 
-
+        if(textStable!= props.text){setN(0)}
         setTimeout(() => {
             setLoad()
             setPlay("play")
