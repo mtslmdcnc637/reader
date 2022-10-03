@@ -17,6 +17,7 @@ function Begin (props){
     const [load, setLoad] = useState()
     const [textState, setTextState] = useState()
     const [n, setN] = useState()
+    
     useEffect(()=>{if(props.nWord){setN(parseInt(props.nWord))}else{setN(0)}},[])
     
     const [size, setSize] = useState()
@@ -72,7 +73,7 @@ function Begin (props){
              </div>
              <div className={style.form_cont}>
                      <form className={style.form} onSubmit={getText} >
-                     <textarea name="text" placeholder="Insira aqui seu texto" value={props.text} className={style.input}></textarea>
+                     <textarea name="text" placeholder="Insira aqui seu texto" id="textarea" defaultValue={props.text} className={style.input}></textarea>
                      <div><span>Velocidade</span>
                      <select name="ppm" id="ppm">
                          <option value="200" key="200">200 ppm</option>
