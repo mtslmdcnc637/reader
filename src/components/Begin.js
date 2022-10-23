@@ -19,20 +19,11 @@ function Begin (props){
     const [load, setLoad] = useState()
     const [textState, setTextState] = useState()
     const [n, setN] = useState()
-<<<<<<< HEAD
-    const  [previous_text, setPrevious_text] = useState(props.text)
-    
-    useEffect(()=>{
-        if(props.nWord){setN(parseInt(props.nWord))}else{setN(0)}
-    
-    },[])
-=======
     const getTextOnServer = document.getElementById("getTextOnServer");
       const textarea = document.getElementById("textarea");
       const inputBook = document.getElementById("inputBook");
       const [pdf, setPdf] = useState('')
     useEffect(()=>{if(props.nWord){setN(parseInt(props.nWord))}else{setN(0)}},[])
->>>>>>> upload
     
     const [size, setSize] = useState()
     function getText(e){
@@ -43,13 +34,7 @@ function Begin (props){
         var getPpm = e.target.ppm.value
         setPpm(getPpm)
         setTextState(textStable) 
-<<<<<<< HEAD
-        localStorage.setItem("text", textStable)
-
-        if(textStable!= props.text){setN(0); setPrevious_text(textStable)}
-=======
         
->>>>>>> upload
         setTimeout(() => {
             setLoad()
             setPlay("play")
@@ -112,20 +97,12 @@ function Begin (props){
              </div>
              <div className={style.form_cont}>
                      <form className={style.form} onSubmit={getText} >
-<<<<<<< HEAD
-                     <textarea name="text" placeholder="Insira aqui seu texto" id="textarea" defaultValue={previous_text} className={style.input}></textarea>
-                     <div><span>Velocidade</span>
-                     <select name="ppm" id="ppm">
-                         <option value="150" key="150">150 ppm</option>
-                         <option value="200" key="200">200 ppm</option>
-=======
                      <textarea name="text" placeholder="Insira aqui seu texto" id="textarea" defaultValue={props.text} className={style.input}></textarea>
                      <div><span>Velocidade</span>
                      <select name="ppm" id="ppm">
                          <option value="100" key="100">100 ppm - lento</option>
                          <option value="150" key="150">150 ppm</option>
                          <option value="200" key="200"selected>200 ppm</option>
->>>>>>> upload
                          <option value="250" key="250">250 ppm</option>
                          <option value="300" key="300" >300 ppm</option>
                          <option value="350" key="350">350 ppm</option>
@@ -167,7 +144,6 @@ function Begin (props){
                 <span></span>
                 <span></span>
             </div>
-            <h5 className={style.dica}>Para pausar a leitura é so tocar na tela</h5>
         </div>)
         }
       
