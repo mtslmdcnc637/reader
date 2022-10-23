@@ -318,3 +318,10 @@ select{
   width: 100%;
   margin: 10px 0;
   }
+  .subpdf{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    padding: 1%;
+    margin: 10px 0;
+  }
