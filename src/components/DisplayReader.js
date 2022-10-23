@@ -13,16 +13,18 @@ function DisplayReader (props){
     
     
         var ppmLocal = parseInt(props.ppm)
-        props.setPlay("play")
+        
         var amount = splitedText.length
         props.setSize(amount)
-        var total_time = amount/parseInt(ppmLocal) // tempo total = a quantidade de palavras dividido pela velocidade
+        var total_time = amount/ppmLocal // tempo total = a quantidade de palavras dividido pela velocidade
         total_time = Math.ceil(total_time)+" min"
         localStorage.setItem("text", textLocal)
         localStorage.setItem("ppm", ppmLocal)
-            var vel = 1000/(ppmLocal/60)
-            vel = Math.ceil(vel) 
+        var vel = 1000/(ppmLocal/60)
+        vel = Math.ceil(vel) 
+        props.setPlay("play")
             
+        
         const timer = useMemo(()=>{ setInterval(function(){ 
                             if(num < (splitedText.length+1)){ 
                                 setNum(prev => prev + 1)

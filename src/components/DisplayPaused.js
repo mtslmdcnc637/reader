@@ -7,7 +7,7 @@ function DisplayPaused (props){
     const [termThree, setTermThree] = useState()
     const [termFour, setTermFour] = useState()
     const [termFive, setTermFive] = useState()
-    var amount = (props.text).length
+    var amount = ((props.text).split(" ")).length
     const n_local = props.n
     var total_time = amount/props.ppm
         total_time = Math.ceil(total_time)+" min"
@@ -28,8 +28,8 @@ function DisplayPaused (props){
    
     return (
         <>
-            <div className={style.conteiner}>
-                <div className={style.words} onClick={()=>{props.setPlay("play"); props.setN(n_local)}}>
+            <div className={style.conteiner} onClick={()=>{props.setPlay("play"); props.setN(n_local)}}>
+                <div className={style.words} >
                     <h2 className={style.shadow}></h2><h1>{termThree}</h1><h2 className={style.shadow}></h2>
                 </div>
                 <span className={style.place}>{parseInt(props.n)+1}/{props.size} | Tempo estimado de leitura: {total_time}</span>
