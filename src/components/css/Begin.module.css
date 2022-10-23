@@ -289,15 +289,16 @@ select{
   .bg p {
     width: 100%;
     text-align: center;
-    padding: 0 5% 0 5%;
+    padding: 0 5% 5% 5%;
   }
   .bg{
     width:95vw;
     min-width: 370px;
     height: auto;
-    padding: 8% 4%;
+    padding: 5% 4%;
     align-items: center;
     align-content: center;
+    margin-top:100px;
   }
   .box_conteiner{
     width:95vw;
@@ -319,6 +320,7 @@ select{
     position: relative;
     transform: translate(0);
     position: relative;
+    padding: 10px 30px;
     
   }
 }
