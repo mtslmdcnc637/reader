@@ -185,13 +185,7 @@ function Begin(props) {
               </div>
               <div className={style.donate} >
                 <div className="embed-responsive embed-responsive-16by9">
-                <iframe
-                  src="https://www.youtube.com/embed/O7M_d46Zhxo"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
+                <iframe src="https://www.youtube.com/embed/SPG4ygoiNa0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                   {width > 700 && (
                 <div>
@@ -202,7 +196,7 @@ function Begin(props) {
 
                   <span>
                     <h1>apoie o desenvolvimento da ferramenta</h1>
-                    <p>Leia o qrcode pra fazer um pix</p>
+                    <p>Leia o qrcode para apoiar com um pix</p>
                   </span>
                 </div>
                   )}
